@@ -5,7 +5,7 @@ import { ApiResponse, Post, UserPostCount } from '../types';
 export const fetchPosts = async (nameFilter?: string): Promise<ApiResponse> => {
   try {
     const baseUrl = process.env.NODE_ENV === 'production'
-      ? 'http://backend:3000/external/posts'
+      ? 'https://jpdwxnz24w.us-east-1.awsapprunner.com/external/posts'
       : 'http://localhost:3000/external/posts';
     const url = nameFilter ? `${baseUrl}?name=${encodeURIComponent(nameFilter)}` : baseUrl;
     const response = await axios.get<ApiResponse>(url);

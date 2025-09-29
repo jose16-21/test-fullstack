@@ -1,4 +1,4 @@
-name: Deploy to AWS ECR
+name: Publish Backend Image to ECR
 
 on:
   workflow_run:
