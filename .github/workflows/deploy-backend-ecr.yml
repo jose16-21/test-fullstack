@@ -1,10 +1,9 @@
 name: Publish Backend Image to ECR
 
 on:
-  workflow_run:
-    workflows: ["CI Tests"]
-    types:
-      - completed
+  push:
+    branches:
+      - develop
 
 jobs:
   build-and-push:
