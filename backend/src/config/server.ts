@@ -1,13 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import { config } from './environment';
-import externalRoutes from '../interface/routes/external.routes';
+import postsRoutes from '../interface/routes/post.routes';
 
 const app = express();
 
 // CORS configuration
 const corsOptions = {
   origin: [
+    'https://d3dmhyhi7cmhzt.cloudfront.net', // Production URL
     'http://localhost:3001', // Frontend development
     'http://localhost:3000', // Alternative frontend port
     'http://127.0.0.1:3001', // Alternative localhost
@@ -37,6 +38,6 @@ app.get('/health', (req, res) => {
 });
 
 // Routes
-app.use('/external', externalRoutes);
+app.use('/', postsRoutes);
 
 export default app;
