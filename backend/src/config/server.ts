@@ -8,6 +8,7 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: [
+    'https://jpdwxnz24w.us-east-1.awsapprunner.com', // Production URL
     'http://localhost:3001', // Frontend development
     'http://localhost:3000', // Alternative frontend port
     'http://127.0.0.1:3001', // Alternative localhost
