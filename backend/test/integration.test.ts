@@ -14,10 +14,10 @@ describe('API Integration Tests', () => {
     });
   });
 
-  describe('GET /external/posts', () => {
+  describe('GET /posts', () => {
     it('should return posts without filters', async () => {
       const response = await request(app)
-        .get('/external/posts')
+        .get('/posts')
         .expect(200);
       
       expect(response.body).to.have.property('data');
@@ -30,7 +30,7 @@ describe('API Integration Tests', () => {
 
     it('should return filtered posts when name parameter is provided', async () => {
       const response = await request(app)
-        .get('/external/posts?name=Pedro')
+        .get('/posts?name=Pedro')
         .expect(200);
       
       expect(response.body).to.have.property('data');
@@ -48,7 +48,7 @@ describe('API Integration Tests', () => {
 
     it('should return validation error for invalid name parameter', async () => {
       const response = await request(app)
-        .get('/external/posts?name=P')
+        .get('/posts?name=P')
         .expect(400);
       
       expect(response.body).to.have.property('error');
@@ -59,7 +59,7 @@ describe('API Integration Tests', () => {
 
     it('should return validation error for unknown query parameters', async () => {
       const response = await request(app)
-        .get('/external/posts?invalidParam=test')
+        .get('/posts?invalidParam=test')
         .expect(400);
       
       expect(response.body).to.have.property('error');
