@@ -38,8 +38,24 @@ docker run -p 5173:80 api-test-log-frontend
 
 ## Tests
 
+### Localmente
 ```bash
 npm run test
+```
+
+### Usando Docker (Recomendado)
+```bash
+# Ejecutar tests en el contenedor del frontend
+docker exec frontend-dev npm test
+
+# Ejecutar tests con modo interactivo
+docker exec -it frontend-dev npm test
+
+# Ejecutar tests específicos
+docker exec frontend-dev npm test -- SearchInput.test.tsx
+
+# Ejecutar tests con cobertura (si está configurado)
+docker exec frontend-dev npm run test:coverage
 ```
 
 ## Estructura principal

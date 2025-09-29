@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { config } from './environment';
-import externalRoutes from '../interface/routes/external.routes';
+import postsRoutes from '../interface/routes/post.routes';
 
 const app = express();
 
@@ -38,6 +38,6 @@ app.get('/health', (req, res) => {
 });
 
 // Routes
-app.use('/external', externalRoutes);
+app.use('/', postsRoutes);
 
 export default app;
